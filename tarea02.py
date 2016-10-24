@@ -45,7 +45,7 @@ test2=[1,3,5,2,4,6]
 #print test
 #print "this is",inv
 
-fh=open("algo2.txt","r")
+fh=open("sample.txt","r")
 superlista=list()
 for line in fh:
     #print line.strip()
