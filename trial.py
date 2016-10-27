@@ -1,8 +1,5 @@
 #test1
 
-print "test 1"
-
-
 def count(elements):
     d=dict()
     counter=0
@@ -13,29 +10,32 @@ def count(elements):
     if elements[pointer]==1:
         pointer+=1
         counter+=1
-        while elements[pointer] ==1:
-            counter+=1
+        while pointer < len(elements):
+            if elements[pointer]==1:        
+                counter+=1
+                initial=counter
+            else:
+                break
             pointer+=1
-        initial=counter
-        counter=0
-    
-    
+            
+    counter=0
+    pointer+=1
     while pointer < len(elements):
         if elements[pointer] == 1:
             counter+=1
-            pointer+=1
-        else:
-            print "this is counter",counter
-            if counter not in d:
-                d[counter] = 1
-            elif pointer == len(elements) -1:
+            if pointer == (len(elements)-1):
                 last=counter
-            else:
-                d[counter] = d[counter] + 1
-
-            counter=0
+            
+        else:
+            if counter > 0:
+                if counter not in d:
+                    d[counter] = 1
+                else:
+                    d[counter] = d[counter] + 1
+                counter=0
+        
         pointer+=1
-    
+        
     total=last+initial
     if total > 0:
         if total not in d:
@@ -46,5 +46,8 @@ def count(elements):
     print d
     
 #main 
-test=[1,0,1,1,0,0,1,1,1,0,1,1,0]
+#test=[1,0,1,1,0,0,1,1,1,0,1,1,0]
+#test=[1,0,1,1,0,0,1,1,1,0,1,1,0,1,1]
+test=[1,1,1,0,1,1,0,1]
+#test=[1,0,1,1,0]
 count(test)   
