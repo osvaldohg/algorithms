@@ -10,13 +10,13 @@ def test_set(A,B):
     #if aSet.issubset(bSet):
     #    return "sublist"
     
-    if aSet <= bSet:
+    if aSet < bSet:
         return "sublist"
     
     #if aSet.issuperset(bSet):
     #    return "superlist"
     
-    if aSet >= bSet:
+    if aSet > bSet:
         return "superlist"    
     
     return "neither"
