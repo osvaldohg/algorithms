@@ -9,7 +9,6 @@ def quicksort(arreglo,l,r):
     
     if l < r:
         p=partition(arreglo,l,r)
-        
         quicksort(arreglo,l,p-1 )
         quicksort(arreglo,p+1,r)
     
