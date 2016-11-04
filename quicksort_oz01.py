@@ -1,25 +1,27 @@
 #quicksort_oz
+#quicksort using first element as pivot
+
 counter=0
-print "quiksort"
+print "quicksort"
 
 def quicksort(arreglo,l,r):
     print "quicksort oz"
-    print arreglo
+    
     if l < r:
         p=partition(arreglo,l,r)
-        print "this is pivot",p
+        
         quicksort(arreglo,l,p-1 )
         quicksort(arreglo,p+1,r)
     
 def partition(arreglo,l,r):
     p=arreglo[l]
-    print "real pivot",p
+    
     i=l+1
     j=l+1
     global counter
 
     for x in range (j,r+1):
-        print "x=",x
+        
         counter+=1
         if arreglo[x] < p:
             #swap arreglo[j,i]
