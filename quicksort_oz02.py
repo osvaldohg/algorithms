@@ -36,9 +36,6 @@ def partition(arreglo,l,r):
     arreglo[i-1]=pivot
     return i-1
 
-def test(arreglo2):
-    arreglo2[3]=2
-
 def readValues(path):
     fh=open(path,"r")
     lista=list()
