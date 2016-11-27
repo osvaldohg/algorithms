@@ -1,6 +1,9 @@
 import sys
 sys.setrecursionlimit(64000000)
 
+#to run increase stack size
+#ulimit -s 65532
+
 #print "DFS"
 
 explored={}
