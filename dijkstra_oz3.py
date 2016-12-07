@@ -49,12 +49,10 @@ def dijsktra(graph,start):
             a[min[0]]=min[1]
         min=[None,None]
         #print "x=",x
-        n+=1
-                
-                
-    print "this is a",a        
-        
+                  
+    #a[] are the final distances from start       
     #print a
+    #for the homework
     ex=[7,37,59,82,99,115,133,165,188,197]
     for e in ex:
         print a[e],
