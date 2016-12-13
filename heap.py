@@ -2,7 +2,7 @@ print "heap"
 
 heap_min=['x']
 heap_max=['x']
-
+total=0
 def removeroot(heap,min):
     val=heap[1]
     #heap[1]=heap.pop()
@@ -21,7 +21,7 @@ def getroot(heap):
     return heap[1]
     
 def bubbledown(heap):
-    print "bubble"
+    #print "bubble"
     for i in range(2,len(heap)):
         #print heap[i/2],heap[i]
         if heap[i/2] > heap[i]:
@@ -57,7 +57,7 @@ def insert(val,heap,min):
 #print heap_max
 
 #true main
-fh=open("mediana2.txt","r")
+fh=open("mediana.txt","r")
 for line in fh:
     number=int(line.strip())
     print number
@@ -80,9 +80,21 @@ for line in fh:
             insert(number,heap_min,True)
             insert(tmp,heap_max,False)
 
-    print "max",heap_max
-    print "min",heap_min
+    if len(heap_max) == len(heap_min):
+        print "1>>",getroot(heap_max)
+        total+=getroot(heap_max)
+    elif len(heap_max) > len(heap_min):
+        print "2>>",getroot(heap_max)
+        total+=getroot(heap_max)
+    elif len(heap_max) < len(heap_min):
+        print "3>>",getroot(heap_min)
+        total+=getroot(heap_min)
+        
+    #print "max-min",heap_max,heap_min
+    #print "total:",total
 
-
-
-
+#print "max",heap_max
+#print "min",heap_min
+print total
+print ">>",total%10000
+#1213 :(
