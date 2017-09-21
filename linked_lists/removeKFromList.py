@@ -9,20 +9,20 @@
 #     self.next = None
 #
 def removeKFromList(l, k):
-   prev=l
+   prev=None
    current=l
+      
+   while l is not None and l.value==k:
+      l=l.next
    
    while current is not None:
-      next=current.next
       
       if current.value==k:
-         if current==l:
-            l=current.next
-            
-            #print "lol"
-         else:
-            prev.next=next
+         if prev is not None:
+            prev.next=current.next
          
+         current=current.next
+         continue
       prev=current
       current=current.next
       
