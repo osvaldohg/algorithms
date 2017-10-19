@@ -5,7 +5,7 @@ print "cleanning"
 
 excludelist=["exclude.txt","excludef1","excludef2"]
 
-paths="C:\Users\ohuertag\Documents\oz_docs\python\git\\test1"
+paths="C:\Users\a\Documents\python\\test1"
 
 files=os.listdir(paths)
 
